@@ -17,7 +17,7 @@ class CarsIndex extends Component {
   render() {
     return (
       <div className="app">
-        <Garage garage={this.props.garage} >Frites</Garage>
+        <Garage garage={this.props.garage}></Garage>
         <div className="cars-index">
           {this.props.cars.map((car) => {
             return (

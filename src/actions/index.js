@@ -3,8 +3,10 @@ export const FETCH_CARS = "FETCH_CARS";
 export const FETCH_CAR = "FETCH_CAR";
 export const CAR_CREATED = "CAR_CREATED";
 
+const BASE_URL = "https://wagon-garage-api.herokuapp.com";
+
 export function fetchCars(garage) {
-  const url = `https://wagon-garage-api.herokuapp.com/${garage}/cars`;
+  const url = `${BASE_URL}/${garage}/cars`;
   const promise = fetch(url).then(response => response.json());
   return {
     type: FETCH_CARS,
@@ -13,7 +15,7 @@ export function fetchCars(garage) {
 }
 
 export function fetchCar(id) {
-  const promise = fetch(`$https://wagon-garage-api.herokuapp.com/cars/${id}`)
+  const promise = fetch(`${BASE_URL}/cars/${id}`)
     .then(response => response.json());
   return {
     type: FETCH_CAR,
@@ -21,15 +23,16 @@ export function fetchCar(id) {
   };
 }
 
-export function createCar(garage, body) {
-  const request = fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`, {
+export function createCar(garage, body, callback) {
+  const request = fetch(`${BASE_URL}/${garage}/cars`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(body)
-  }).then(response => response.json());
+  }).then(response => response.json())
+    .then(callback);
   return {
     type: CAR_CREATED,
     payload: request

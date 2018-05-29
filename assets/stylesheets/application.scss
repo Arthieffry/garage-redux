@@ -9,12 +9,16 @@ body {
   padding: 20px 0;
 }
 
+// App -----------------
+
 .app {
   width: 100%;
   height: 100%;
   display: flex;
   flex: row;
 }
+
+// Garage -----------
 
 .garage-container {
   flex: 1;
@@ -66,34 +70,80 @@ body {
   }
 }
 
+// Cars -----------------------------
+
 .cars-index {
   flex: 3;
   background: #AAAAAA;
   overflow: scroll;
 }
 
+// card index
+
 .cars-card {
   text-decoration: none;
   color: black;
   display: flex;
-  flex: row;
   background-color: #FFFFFF;
   margin: 5px 10px;
+  position: relative;
+  border-radius: 4px;
   .car-img {
     height: 100px;
     width: 100px;
+    background-color: black
+  }
+  .car-img-show {
+    height: 300px;
+    width: 300px;
     background-color: black
   }
   .car-content {
     padding: 10px 20px;
     flex: auto;
     text-decoration: none;
-    h5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h5, h4 {
       font-weight: bold;
       text-transform: uppercase;
+      margin-bottom: 15px
+    }
+    .plate {
+      border: solid 2px black;
+      padding: 10px;
+      text-align: center;
+      width: 80%;
     }
   }
+  .delete {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #C2413B;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 4px
+  }
 }
+
+
+// Form -----------------
+
+.bg-form {
+  background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(255, 255, 250, 0.6)),
+    url('https://github.com/lewagon/garage-redux/blob/master/assets/images/form.jpg?raw=true');
+  background-size: cover;
+  .form-content {
+    margin: 10% 20%;
+    margin-bottom: auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 3px
+  }
+}
+
 .bold {
   font-weight: bold
 }
