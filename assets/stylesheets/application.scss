@@ -1,4 +1,100 @@
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+body {
+  background: #DDDDDD;
+  height: 100vh;
+  width: 100%
 }
+
+#root {
+  height: 100%;
+  padding: 20px 0;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: row;
+}
+
+.garage-container {
+  flex: 1;
+  min-width: 100px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  .garage-bg {
+    flex: 1em;
+    position: relative;
+    background-image: linear-gradient(rgba(250, 250, 250, 0.4), rgba(255, 255, 250, 0.6)),
+      url('https://github.com/lewagon/garage-redux/blob/master/assets/images/mechanic.jpg?raw=true');
+    background-size: cover;
+    .logo-img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
+      bottom: -50px;
+      border: solid 5px white;
+      border-radius: 50%;
+      width: 100px;
+    }
+  }
+  .garage-description {
+    margin-top: 60px;
+    padding: 15px;
+    flex: 2;
+    h3 {
+      text-align: center;
+      margin-bottom: 20px
+    }
+    p {
+      color: #777777;
+    }
+    .btn-content {
+      text-align: center;
+      margin-top: 20px;
+      .btn-car {
+        border: 2px black solid;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 15px;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.cars-index {
+  flex: 3;
+  background: #AAAAAA;
+  overflow: scroll;
+}
+
+.cars-card {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex: row;
+  background-color: #FFFFFF;
+  margin: 5px 10px;
+  .car-img {
+    height: 100px;
+    width: 100px;
+    background-color: black
+  }
+  .car-content {
+    padding: 10px 20px;
+    flex: auto;
+    text-decoration: none;
+    h5 {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+.bold {
+  font-weight: bold
+}
+
